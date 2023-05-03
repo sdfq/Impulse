@@ -1,0 +1,13 @@
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/cryptopp-object.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/test.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/cryptopp-static.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/dynamic.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/cryptopp-shared.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/static.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/cryptest.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/cryptest.exe.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/list_install_components.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/install.dir
+C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug/CMakeFiles/install/local.dir

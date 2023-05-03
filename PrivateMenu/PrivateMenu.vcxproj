@@ -1,0 +1,1684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{8F281285-54DA-43C6-BAC9-23D3EB65E636}</ProjectGuid>
+    <RootNamespace>PrivateMenu</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Build\Intermediate\$(Configuration)\</IntDir>
+    <TargetName>Private</TargetName>
+    <TargetExt>.dll</TargetExt>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)/src;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <LanguageStandard>
+      </LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <ShowIncludes>false</ShowIncludes>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>minhook.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;cryptlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\backend\backendExplosions.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\misc\hudEditor.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\misc\tuneablesMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\model swapping\customSwappingMenu.h" />
+    <ClInclude Include="src\authorization\atlrx.h" />
+    <ClInclude Include="src\authorization\authorization.h" />
+    <ClInclude Include="src\authorization\encryption.h" />
+    <ClInclude Include="src\authorization\network.h" />
+    <ClInclude Include="src\authorization\RegExp.h" />
+    <ClInclude Include="src\authorization\serverEvent.h" />
+    <ClInclude Include="src\authorization\sha512.hh" />
+    <ClInclude Include="src\authorization\StringProcess.h" />
+    <ClInclude Include="src\authorization\Web2.0.h" />
+    <ClInclude Include="src\authorization\winhttpclient.h" />
+    <ClInclude Include="src\backend\backendAnticheat.h" />
+    <ClInclude Include="src\backend\backendMain.h" />
+    <ClInclude Include="src\backend\backendModelSwap.h" />
+    <ClInclude Include="src\backend\backendNatives.h" />
+    <ClInclude Include="src\backend\backendHooking.h" />
+    <ClInclude Include="src\backend\backendProtection.h" />
+    <ClInclude Include="src\backend\backendSecurity.h" />
+    <ClInclude Include="src\backend\patterns.h" />
+    <ClInclude Include="src\menu\submenus\main\local\OwnedForcefield.h" />
+    <ClInclude Include="src\menu\submenus\main\model swapping\swappedModelsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\model swapping\swappingPresetsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\protection\blockallProtectionMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\protection\eventreactionProtectionMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\protection\miscProtectionMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\protection\networkeventProtectionMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\protection\presenceeventsProtectionMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\protection\scripteventProtectionMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\protection\spoofingProtectionMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\recovery\evorecMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\recovery\casinoMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\sessionDisablesMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\data management\dataMenu.h" />
+    <ClInclude Include="src\menu\submenus\main\session\info spoofer\infoSpooferProfilesMenu.h" />
+    <ClInclude Include="src\menu\submenus\main\session\infoSpooferMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\messagingMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\blacklistPlayer.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\blacklist\blacklistActionsMenu.h" />
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\blacklist\BlacklistList.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\blacklist\rockstarDevActionsMenu.h" />
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\griefing\disables\disableActionsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\quickActions.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\streamermodeMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\loadingMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\loading\INIVehicleMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\shv\shvMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\map mods\mapModsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\vehicle\dlcVehiclesMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\teleport\customTeleportMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\teleport\onlineTeleportsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\testerMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\weapon\ownedTriggerbotMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\blackHolePlayerMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\bodyguardMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\bodyguardMenuEditor.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\bodyguardSelectedMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\vehicleBlacklistMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\util\inventory.h" />
+    <ClInclude Include="src\menu\util\inventoryTypes.h" />
+    <ClInclude Include="src\menu\util\session.h" />
+    <ClInclude Include="src\menu\util\socialclub.h" />
+    <ClInclude Include="src\util\memory\patternBatch.h" />
+    <ClInclude Include="src\util\memory\VPBypass.h" />
+    <ClInclude Include="src\util\profiler.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\backend\pools\entityPool.h" />
+    <ClInclude Include="src\backend\pools\objectPool.h" />
+    <ClInclude Include="src\backend\pools\pedPool.h" />
+    <ClInclude Include="src\backend\pools\poolManager.h" />
+    <ClInclude Include="src\backend\pools\vehiclePool.h" />
+    <ClInclude Include="src\backend\security\securityHekker.h" />
+    <ClInclude Include="src\menu\globals.h" />
+    <ClInclude Include="src\menu\menu.h" />
+    <ClInclude Include="src\menu\options\breakOption.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\options\buttonOption.h" />
+    <ClInclude Include="src\menu\options\colorOption.h" />
+    <ClInclude Include="src\menu\options\keyOption.h" />
+    <ClInclude Include="src\menu\options\numberOption.h" />
+    <ClInclude Include="src\menu\options\option.h" />
+    <ClInclude Include="src\menu\options\scrollOption.h" />
+    <ClInclude Include="src\menu\options\submenuOption.h" />
+    <ClInclude Include="src\menu\options\toggleOption.h" />
+    <ClInclude Include="src\menu\options\vehicleOption.h" />
+    <ClInclude Include="src\menu\submenus\loadJsonMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\developerMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\local\globalMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\misc\miscDisable.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\searchResultsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\excludesMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\sessionESP.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\sessionGriefing.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\sessionModifications.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\sessionPeacefulMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\sessionRemote.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\sessionTalking.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\sessionTeleportMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\sessionVehicle.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\spawn\sessionSpawnerTypeMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayers\spawn\sessionSpawnVehicleMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\fog\fingerOfGodFriendMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\fog\fingerOfGodMainMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\namePresetMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\local\particleMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\local\animationMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\local\modelMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\nameMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\local\visionMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\local\wardrobeMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\local\wardrobe\loadWardrobeMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\local\wardrobe\wardrobePresetsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\miscMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\misc\miscExternalLinks.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\misc\miscReportStats.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\misc\miscTrainOptions.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\misc\miscTVMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\protection\attachmentProtectionMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\recovery\KDMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\recovery\moneyMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\recovery\statsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\recovery\unlocksMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\fog\fingerOfGodMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\playerMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerListMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\allPlayersMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\chatCommandMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\dropsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\ESPMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\griefingMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\griefing\attachmentMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\griefing\attachment\attachmentFlagsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\griefing\attachment\attachmentObjectsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\griefing\attachment\attachmentPedsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\griefing\attachment\attachmentPresetMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\griefing\attachment\attachmentVehiclesMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\griefing\soundMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\peacefulMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\peaceful\peacefulAttachmentMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\peaceful\peacefulAttachmentTheirVehicleToYourVehicle.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\peaceful\peacefulAttachmentYourVehicleToTheirVehicle.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\peaceful\peacefulAttachmentYouToTheirVehicle.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\peaceful\peacefulAttachmentYouToThem.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\playerTeleportMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\playerVehicleMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\remoteMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\spawn\playerSpawnerTypeMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\session\playerList\player\spawn\playerSpawnVehicleMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\settings\languageMenu\loadLanguageMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\settings\themeMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\settings\themeMenu\loadCustomHeaderMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\settings\themeMenu\loadThemesMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawnMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\manager\spawnEntityManager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\manager\spawnObjectManager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\manager\spawnPedManager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\manager\spawnVehicleManager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\object\spawnObjectSettingsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\ped\spawnPedSettingsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\spawnObjectMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\spawnPedMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\vehicle\spawnerTypeMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\spawnVehicleMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\vehicle\spawnVehicleSettingsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\loading\XMLVehicleMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\teleport\glitchedTeleportMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\teleport\insideTeleportMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\teleport\IPLTeleportMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\teleport\landmarksTeleportMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\teleport\storyModeTeleportMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\cargobobMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\doorsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\handling\bikeHandlingMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\handling\boatHandlingMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\handling\flyingHandlingMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\handling\loadHandlingDataMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\spawn\loading\JsonVehicleMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\LSCMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\LSC\vehicleLightsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\LSC\vehiclePerformanceMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\LSC\vehiclePlatesMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\LSC\vehicleResprayMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\LSC\vehicleWheelsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\rampsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\handlingMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\vehicleAcrobaticsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\vehicleMovementMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\vehicleMultipliers.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\vehicleParticlesMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicle\vehicleWeaponsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\VFXMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\VFX\VFXCoronasMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\VFX\VFXDistantLightsMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\VFX\VFXPuddlesMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\VFX\VFXSkyMenuVars.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\VFX\VFXTonemappingMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\VFX\VFXTrafficLightMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\VFX\VFXTrainMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\VFX\VFXVehicleMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\weaponMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\weapon\weaponAimbot.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\weapon\weaponAmmoModifier.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\weapon\weaponShootEntities.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\weapon\weaponVisuals.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\weapon\weaponWeapons.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\blackholeMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\editClosestDrawableMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\pedManagerMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\trafficManagerMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\waypointMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\weatherManagerMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\world\worldDrawablesMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\util\animatedYtd.h" />
+    <ClInclude Include="src\menu\util\contextMenu.h" />
+    <ClInclude Include="src\menu\util\fingerOfGod.h" />
+    <ClInclude Include="src\menu\util\hotkeyManager.h" />
+    <ClInclude Include="src\menu\util\scaleform.h" />
+    <ClInclude Include="src\menu\util\netEvent.h" />
+    <ClInclude Include="src\menu\util\oceanManager.h" />
+    <ClInclude Include="src\menu\util\playerManager.h" />
+    <ClInclude Include="src\menu\renderer.h" />
+    <ClInclude Include="src\menu\submenu.h" />
+    <ClInclude Include="src\menu\submenuHandler.h" />
+    <ClInclude Include="src\menu\submenus\main\localMenu.h" />
+    <ClInclude Include="src\menu\submenus\mainMenu.h" />
+    <ClInclude Include="src\menu\submenus\main\local\playerMovementMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\protectionMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\recoveryMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\sessionMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\settingsMenu.h" />
+    <ClInclude Include="src\menu\submenus\main\settings\languageMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\teleportMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\vehicleMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\submenus\main\worldMenu.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\menu\util\entityControl.h" />
+    <ClInclude Include="src\menu\util\menuFunctions.h" />
+    <ClInclude Include="src\menu\util\menuInput.h" />
+    <ClInclude Include="src\menu\util\scriptHookV.h" />
+    <ClInclude Include="src\menu\util\transaction.h" />
+    <ClInclude Include="src\menu\util\VFX.h" />
+    <ClInclude Include="src\UI\components\playerInfoComponent.h" />
+    <ClInclude Include="src\UI\components\profilerComponent.h" />
+    <ClInclude Include="src\UI\components\systemdataComponent.h" />
+    <ClInclude Include="src\UI\components\input\textInputComponent.h" />
+    <ClInclude Include="src\util\input\controller.h" />
+    <ClInclude Include="src\util\memory\reclass.h" />
+    <ClInclude Include="src\util\pugiconfig.hpp" />
+    <ClInclude Include="src\util\pugixml.hpp" />
+    <ClInclude Include="src\util\translationString.h" />
+    <ClInclude Include="src\menu\util\vehicles.h" />
+    <ClInclude Include="src\natives\crossmap.h" />
+    <ClInclude Include="src\natives\invoker.h" />
+    <ClInclude Include="src\natives\natives.h" />
+    <ClInclude Include="src\minhook.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\UI\component.h" />
+    <ClInclude Include="src\UI\components\loggerComponent.h" />
+    <ClInclude Include="src\UI\components\textBoxComponent.h" />
+    <ClInclude Include="src\UI\components\vehicleComponent.h" />
+    <ClInclude Include="src\UI\frame.h" />
+    <ClInclude Include="src\UI\screenPanel.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\UI\window.h" />
+    <ClInclude Include="src\UI\windowManager.h" />
+    <ClInclude Include="src\util\config.h" />
+    <ClInclude Include="src\util\fiberManager.h" />
+    <ClInclude Include="src\util\fiberPool.h" />
+    <ClInclude Include="src\util\input\input.h" />
+    <ClInclude Include="src\util\input\keyboard.h" />
+    <ClInclude Include="src\util\input\mouse.h" />
+    <ClInclude Include="src\util\memory\memory.h" />
+    <ClInclude Include="src\util\status.h" />
+    <ClInclude Include="src\util\json.h" />
+    <ClInclude Include="src\util\log.h" />
+    <ClInclude Include="src\util\memory\pattern.h" />
+    <ClInclude Include="src\util\script.h" />
+    <ClInclude Include="src\util\systemData.h" />
+    <ClInclude Include="src\util\threadPool.h" />
+    <ClInclude Include="src\util\types.h" />
+    <ClInclude Include="src\util\utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\backend\backendExplosions.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\backend\backendModelSwap.cpp" />
+    <ClCompile Include="src\menu\submenus\main\misc\hudEditor.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\misc\tuneablesMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\model swapping\customSwappingMenu.cpp" />
+    <ClCompile Include="src\authorization\authorization.cpp" />
+    <ClCompile Include="src\authorization\encryption.cpp" />
+    <ClCompile Include="src\authorization\network.cpp" />
+    <ClCompile Include="src\authorization\serverEvent.cpp" />
+    <ClCompile Include="src\backend\backendAnticheat.cpp" />
+    <ClCompile Include="src\backend\backendMain.cpp" />
+    <ClCompile Include="src\backend\backendNatives.cpp" />
+    <ClCompile Include="src\backend\backendHooking.cpp" />
+    <ClCompile Include="src\backend\backendProtection.cpp" />
+    <ClCompile Include="src\backend\backendSecurity.cpp" />
+    <ClCompile Include="src\menu\submenus\main\local\OwnedForcefield.cpp" />
+    <ClCompile Include="src\menu\submenus\main\model swapping\swappedModelsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\model swapping\swappingPresetsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\protection\blockallProtectionMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\protection\eventreactionProtectionMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\protection\miscProtectionMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\protection\networkeventProtectionMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\protection\presenceeventsProtectionMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\protection\scripteventProtectionMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\protection\spoofingProtectionMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\recovery\evorecMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\recovery\casinoMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\sessionDisablesMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\data management\dataMenu.cpp" />
+    <ClCompile Include="src\menu\submenus\main\session\info spoofer\infoSpooferProfilesMenu.cpp" />
+    <ClCompile Include="src\menu\submenus\main\session\infoSpooferMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\messagingMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\blacklistPlayer.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\blacklist\blacklistActionsMenu.cpp" />
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\blacklist\BlacklistList.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\blacklist\rockstarDevActionsMenu.cpp" />
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\griefing\disables\disableActionsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\quickActions.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\streamermodeMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\loadingMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\loading\INIVehicleMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\shv\shvMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\map mods\mapModsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\vehicle\dlcVehiclesMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\teleport\customTeleportMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\teleport\onlineTeleportsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\testerMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\weapon\ownedTriggerbotMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\blackHolePlayerMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\bodyguardMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\bodyguardMenuEditor.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\bodyguardSelectedMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\vehicleBlacklistMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\util\inventory.cpp" />
+    <ClCompile Include="src\menu\util\socialclub.cpp" />
+    <ClCompile Include="src\util\memory\pattern.cpp" />
+    <ClCompile Include="src\menu\util\session.cpp" />
+    <ClCompile Include="src\util\memory\patternBatch.cpp" />
+    <ClCompile Include="src\util\memory\VPBypass.cpp" />
+    <ClCompile Include="src\util\profiler.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\backend\pools\entityPool.cpp" />
+    <ClCompile Include="src\backend\pools\objectPool.cpp" />
+    <ClCompile Include="src\backend\pools\pedPool.cpp" />
+    <ClCompile Include="src\backend\pools\poolManager.cpp" />
+    <ClCompile Include="src\backend\pools\vehiclePool.cpp" />
+    <ClCompile Include="src\dllmain.cpp" />
+    <ClCompile Include="src\menu\menu.cpp" />
+    <ClCompile Include="src\menu\options\breakOption.cpp" />
+    <ClCompile Include="src\menu\options\buttonOption.cpp" />
+    <ClCompile Include="src\menu\options\colorOption.cpp" />
+    <ClCompile Include="src\menu\options\keyOption.cpp" />
+    <ClCompile Include="src\menu\options\numberOption.cpp" />
+    <ClCompile Include="src\menu\options\option.cpp" />
+    <ClCompile Include="src\menu\options\scrollOption.cpp" />
+    <ClCompile Include="src\menu\options\submenuOption.cpp" />
+    <ClCompile Include="src\menu\options\toggleOption.cpp" />
+    <ClCompile Include="src\menu\options\vehicleOption.cpp" />
+    <ClCompile Include="src\menu\submenus\loadJsonMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\developerMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\local\globalMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\misc\miscDisable.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\searchResultsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\excludesMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\sessionESP.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\sessionGriefing.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\sessionModifications.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\sessionPeacefulMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\sessionRemote.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\sessionTalking.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\sessionTeleportMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\sessionVehicle.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\spawn\sessionSpawnerTypeMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayers\spawn\sessionSpawnVehicleMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\fog\fingerOfGodFriendMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\fog\fingerOfGodMainMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\namePresetMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\local\particleMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\local\animationMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\local\modelMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\nameMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\local\visionMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\local\wardrobeMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\local\wardrobe\loadWardrobeMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\local\wardrobe\wardrobePresetsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\miscMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\misc\miscExternalLinks.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\misc\miscReportStats.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\misc\miscTrainOptions.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\misc\miscTVMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\protection\attachmentProtectionMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\recovery\KDMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\recovery\moneyMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\recovery\statsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\recovery\unlocksMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\allPlayersMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\fog\fingerOfGodMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\playerMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerListMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\chatCommandMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\dropsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\ESPMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\griefingMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\griefing\attachmentMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\griefing\attachment\attachmentFlagsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\griefing\attachment\attachmentObjectsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\griefing\attachment\attachmentPedsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\griefing\attachment\attachmentPresetMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\griefing\attachment\attachmentVehiclesMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\griefing\soundMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\peacefulMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\peaceful\peacefulAttachmentMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\peaceful\peacefulAttachmentTheirVehicleToYourVehicle.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\peaceful\peacefulAttachmentYourVehicleToTheirVehicle.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\peaceful\peacefulAttachmentYouToTheirVehicle.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\peaceful\peacefulAttachmentYouToThem.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\playerTeleportMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\playerVehicleMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\remoteMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\spawn\playerSpawnerTypeMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\session\playerList\player\spawn\playerSpawnVehicleMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\settings\languageMenu\loadLanguageMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\settings\themeMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\settings\themeMenu\loadCustomHeaderMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\settings\themeMenu\loadThemesMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawnMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\manager\spawnEntityManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\manager\spawnObjectManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\manager\spawnPedManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\manager\spawnVehicleManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\object\spawnObjectSettingsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\ped\spawnPedSettingsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\spawnObjectMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\spawnPedMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\vehicle\spawnerTypeMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\spawnVehicleMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\vehicle\spawnVehicleSettingsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\loading\XMLVehicleMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\teleport\glitchedTeleportMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\teleport\insideTeleportMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\teleport\IPLTeleportMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\teleport\landmarksTeleportMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\teleport\storyModeTeleportMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\cargobobMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\doorsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\handling\bikeHandlingMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\handling\boatHandlingMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\handling\flyingHandlingMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\handling\loadHandlingDataMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\spawn\loading\JsonVehicleMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\LSCMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\LSC\vehicleLightsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\LSC\vehiclePerformanceMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\LSC\vehiclePlatesMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\LSC\vehicleResprayMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\LSC\vehicleWheelsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\rampsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\handlingMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\vehicleAcrobaticsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\vehicleMovementMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\vehicleMultipliers.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\vehicleParticlesMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicle\vehicleWeaponsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\VFXMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\VFX\VFXCoronasMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\VFX\VFXDistantLightsMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\VFX\VFXPuddlesMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\VFX\VFXSkyMenuVars.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\VFX\VFXTonemappingMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\VFX\VFXTrafficLightMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\VFX\VFXTrainMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\VFX\VFXVehicleMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\weaponMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\weapon\weaponAimbot.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\weapon\weaponAmmoModifier.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\weapon\weaponShootEntities.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\weapon\weaponVisuals.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\weapon\weaponWeapons.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\blackholeMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\editClosestDrawableMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\pedManagerMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\trafficManagerMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\waypointMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\weatherManagerMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\world\worldDrawablesMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\util\contextMenu.cpp" />
+    <ClCompile Include="src\menu\util\fingerOfGod.cpp" />
+    <ClCompile Include="src\menu\util\hotkeyManager.cpp" />
+    <ClCompile Include="src\menu\util\scaleform.cpp" />
+    <ClCompile Include="src\menu\util\netEvent.cpp" />
+    <ClCompile Include="src\menu\util\oceanManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\util\playerManager.cpp" />
+    <ClCompile Include="src\menu\renderer.cpp" />
+    <ClCompile Include="src\menu\submenu.cpp" />
+    <ClCompile Include="src\menu\submenuHandler.cpp" />
+    <ClCompile Include="src\menu\submenus\main\localMenu.cpp" />
+    <ClCompile Include="src\menu\submenus\mainMenu.cpp" />
+    <ClCompile Include="src\menu\submenus\main\local\playerMovementMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\protectionMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\recoveryMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\sessionMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\settingsMenu.cpp" />
+    <ClCompile Include="src\menu\submenus\main\settings\languageMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\teleportMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\vehicleMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\submenus\main\worldMenu.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\menu\util\entityControl.cpp" />
+    <ClCompile Include="src\menu\util\menuInput.cpp" />
+    <ClCompile Include="src\menu\util\scriptHookV.cpp" />
+    <ClCompile Include="src\menu\util\transaction.cpp" />
+    <ClCompile Include="src\menu\util\VFX.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\natives\crossmap.cpp" />
+    <ClCompile Include="src\natives\invoker.cpp" />
+    <ClCompile Include="src\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\UI\components\input\textInputComponent.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\UI\components\loggerComponent.cpp" />
+    <ClCompile Include="src\UI\components\playerInfoComponent.cpp" />
+    <ClCompile Include="src\UI\components\profilerComponent.cpp" />
+    <ClCompile Include="src\UI\components\systemdataComponent.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\UI\components\textBoxComponent.cpp" />
+    <ClCompile Include="src\UI\frame.cpp" />
+    <ClCompile Include="src\UI\screenPanel.cpp" />
+    <ClCompile Include="src\UI\window.cpp" />
+    <ClCompile Include="src\UI\windowManager.cpp" />
+    <ClCompile Include="src\util\Config.cpp" />
+    <ClCompile Include="src\util\fiberPool.cpp" />
+    <ClCompile Include="src\util\input\controller.cpp" />
+    <ClCompile Include="src\util\input\input.cpp" />
+    <ClCompile Include="src\util\input\keyboard.cpp" />
+    <ClCompile Include="src\util\input\mouse.cpp" />
+    <ClCompile Include="src\util\Log.cpp" />
+    <ClCompile Include="src\util\fiberManager.cpp" />
+    <ClCompile Include="src\util\memory\memory.cpp" />
+    <ClCompile Include="src\util\memory\reclass.cpp" />
+    <ClCompile Include="src\util\pugixml.cpp" />
+    <ClCompile Include="src\util\systemData.cpp" />
+    <ClCompile Include="src\util\threadPool.cpp" />
+    <ClCompile Include="src\util\translationString.cpp" />
+    <ClCompile Include="src\util\utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="minhook.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="src\natives\return_address_spoofer.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
+    </MASM>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

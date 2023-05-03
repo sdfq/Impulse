@@ -1,0 +1,114 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "cryptopp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "cryptest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cryptest-Debug-5e047a26cb976ede2695.json",
+					"name" : "cryptest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cryptest.exe::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cryptest.exe-Debug-a6194ce4e55530c6b440.json",
+					"name" : "cryptest.exe",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cryptopp-object::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cryptopp-object-Debug-b6824b015bd91200b86d.json",
+					"name" : "cryptopp-object",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cryptopp-shared::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cryptopp-shared-Debug-70c67a492b29ab1ec046.json",
+					"name" : "cryptopp-shared",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cryptopp-static::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cryptopp-static-Debug-67e6bce2f3bbcfd256e4.json",
+					"name" : "cryptopp-static",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamic::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamic-Debug-ae0ba9db60ab43a4c6a5.json",
+					"name" : "dynamic",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "static::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-static-Debug-6c87457959ffc0f7dca7.json",
+					"name" : "static",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp/out/build/x64-Debug",
+		"source" : "C:/Users/Administration/source/repos/brothel-updated/PrivateMenu/src/authorization/cryptopp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}
